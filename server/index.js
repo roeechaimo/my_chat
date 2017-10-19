@@ -1,10 +1,13 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
-var indexFile = __dirname + '/../index.html';
+var path = require('path');
+var indexFile = path.join(__dirname, '../', 'index.html');
+
+app.use(express.static(indexFile));
 
 app.get('/', function(req, res) {
-  console.log(indexFile);
-  res.send(indexFile);
+  res.sendFile(indexFile);
 });
 
 
