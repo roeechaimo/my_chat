@@ -1,0 +1,23 @@
+{
+  "name": "my_chat",
+  "version": "1.0.0",
+  "description": "\"my node.js chat example\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roeechaimo/my_chat.git"
+  },
+  "author": "roeechaimo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roeechaimo/my_chat/issues"
+  },
+  "homepage": "https://github.com/roeechaimo/my_chat#readme",
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "express": "^4.16.2"
+  }
+}
