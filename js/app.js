@@ -1,11 +1,30 @@
 $(function() {
   var socket = io();
-  $('form').submit(function() {
-    socket.emit('chat message', $('#m').val());
-    $('#m').val('');
+  var d = new Date();
+
+  $('#send-massage').on('click', function() {
+    socket.emit('chat message', $('#massage-to-send').val());
+    $('#massage-to-send').val('');
     return false;
   });
+
   socket.on('chat message', function(msg) {
-    $('#messages').append($('<li>').text(msg));
+    var timeOfMassage = massageTime();
+    $('.massages-container').append($('<p>').text(timeOfMassage + ': '));
+    $('.massages-container').append($('<p>').text(msg));
+    $('.massages-container').animate({
+      scrollTop: $('.massages-container').prop("scrollHeight")
+    }, 500);
   });
+
+  function massageTime() {
+    var day = d.getDate();
+    var month = d.getMonth();
+    var year = d.getFullYear();
+    var hour = d.getUTCHours();
+    var minute = d.getMinutes();
+    var dateStr = d.toDateString();
+    var timeStr = d.toTimeString();
+    return dateStr + ', ' + timeStr;
+  }
 });

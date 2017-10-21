@@ -29,6 +29,7 @@ body {
   width: 90%;
   border: 1px solid black;
   margin: 2%;
+  overflow: auto;
 }
 
 .text-container {
