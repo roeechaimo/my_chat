@@ -3,26 +3,27 @@
 
 <head>
   <title>My Chat</title>
-  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/js/app.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
 </head>
 
 <body>
   <header>
     <h1>My Chat!</h1>
   </header>
-  <section>
+  <section id="chat">
     <div class="chat-container">
-      <div class="text-flow-container">
+      <div class="massages-container">
 
       </div>
       <div class="text-container">
         <div class="text">
-
+          <input type="text" placeholder="Enter text to send" id="massage-to-send" />
         </div>
         <div class="button">
-
+          <button id="send-massage">Send</button>
         </div>
       </div>
 
@@ -33,6 +34,8 @@
       @Written in Node.js and Jquery
     </p>
   </footer>
+
+  <script src="/js/app.js"></script>
 </body>
 
 </html>

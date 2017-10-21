@@ -3,12 +3,12 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-var indexFile = path.join(__dirname, '../', 'index.html');
+var basePath = path.join(__dirname, '../');
 
-app.use(express.static(indexFile));
+app.use(express.static(basePath));
 
 app.get('/', function(req, res) {
-  res.sendFile(indexFile);
+  res.sendFile(basePath);
 });
 
 io.on('connection', function(socket) {
@@ -18,6 +18,7 @@ io.on('connection', function(socket) {
   });
   socket.on('chat message', function(msg) {
     console.log('message: ' + msg);
+    io.emit('chat message', msg);
   });
 });
 

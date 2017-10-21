@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#chat {
+  height: 50%;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.chat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.massages-container {
+  height: 80%;
+  width: 90%;
+  border: 1px solid black;
+  margin: 2%;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.text {
+  width: 70%;
+}
+
+.text>#massage-to-send {
+  width: 100%;
+}
+
+.button>#send-massage:hover {
+  cursor: pointer;
+}
