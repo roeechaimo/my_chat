@@ -49,3 +49,8 @@ body {
 .button>#send-massage:hover {
   cursor: pointer;
 }
+
+.date-class{
+  color: #A9A9A9;
+  font-size: 70%;
+}
