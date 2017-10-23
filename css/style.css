@@ -11,10 +11,27 @@ body {
   align-items: center;
 }
 
+::-webkit-scrollbar {
+    width: 2%;
+    height: 80%;    
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #DCDCDC;
+}
+
 #chat {
   height: 50%;
   width: 50%;
   border: 1px solid black;
+  border-radius: 1%;
 }
 
 .chat-container {
@@ -25,11 +42,17 @@ body {
 }
 
 .massages-container {
-  height: 80%;
+  height: 75%;
   width: 90%;
   border: 1px solid black;
-  margin: 2%;
+  border-radius: 1%;
+  margin-top: 4%;
+  margin-bottom: 2%;
   overflow: auto;
+}
+
+.massages-container>p {
+  padding: 1%;
 }
 
 .text-container {
@@ -46,11 +69,11 @@ body {
   width: 100%;
 }
 
-.button>#send-massage:hover {
+.button>#send-massage:hover, .button>#bell:hover {
   cursor: pointer;
 }
 
-.date-class{
+.date-class {
   color: #A9A9A9;
   font-size: 70%;
 }

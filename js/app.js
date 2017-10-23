@@ -1,10 +1,20 @@
 $(function() {
   var socket = io();
   var d = new Date();
+  var gongLocation = '../audio/chinese-gong-daniel_simon.mp3';
 
   $('#send-massage').on('click', function() {
-    socket.emit('chat message', $('#massage-to-send').val());
-    $('#massage-to-send').val('');
+    if ($('#massage-to-send').val() !== '') {
+      socket.emit('chat message', $('#massage-to-send').val());
+      $('#massage-to-send').val('');
+      return false;
+    } else {
+      return false;
+    }
+  });
+
+  $('#bell').on('click', function() {
+    socket.emit('ring bell', gongLocation);
     return false;
   });
 
@@ -18,14 +28,16 @@ $(function() {
     }, 500);
   });
 
+  socket.on('ring bell', function(fileLocation) {
+    var audio = new Audio(fileLocation);
+    audio.play();
+  });
+
   function massageTime() {
-    var day = d.getDate();
-    var month = d.getMonth();
-    var year = d.getFullYear();
-    var hour = d.getUTCHours();
-    var minute = d.getMinutes();
     var dateStr = d.toDateString();
     var timeStr = d.toTimeString();
     return dateStr + ', ' + timeStr;
   }
+
+
 });

@@ -15,15 +15,19 @@ app.get('/', function(req, res) {
 io.on('connection', function(socket) {
   var color = new RandomColor().toHex();
   var msgObj = {'color': '', 'text': ''};
-  console.log('a user connected. color value: ' + color.value);
+  console.log('a user connected.');
   socket.on('disconnect', function() {
-    console.log('user disconnected');
+    console.log('user disconnected.');
   });
   socket.on('chat message', function(msg) {
     msgObj.color = color.value;
     msgObj.text = msg;
     console.log('message: ' + msg);
     io.emit('chat message', JSON.stringify(msgObj));
+  });
+  socket.on('ring bell', function(fileLocation) {
+    console.log(fileLocation);
+    io.emit('ring bell', fileLocation);
   });
 });
 
