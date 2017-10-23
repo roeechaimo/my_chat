@@ -13,7 +13,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 2%;
-    height: 80%;    
+    height: 80%;
 }
 
 /* Track */
@@ -53,6 +53,7 @@ body {
 
 .massages-container>p {
   padding: 1%;
+  margin: 0;
 }
 
 .text-container {
